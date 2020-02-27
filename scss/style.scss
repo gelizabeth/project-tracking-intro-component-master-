@@ -1,0 +1,161 @@
+@import "variables";
+@import "mixins";
+
+body {
+  font-size: 18px;
+  font-family: $barlow-condensed;
+  padding-top: 10rem;
+}
+//headlings
+
+h1 {
+  @include font($dark-blue, 700, 4rem, uppercase);
+  @media(max-width: $mobile) {
+    font-size: 3rem;
+  }
+}
+
+h5 {
+  @include font($grayish-blue,400,1rem,uppercase);
+  letter-spacing: 0.15rem;
+  line-height: 2rem;
+
+  span {
+    width: 100px;
+    background: $dark-blue;
+    color: white;
+    border-top: 4px solid $dark-blue;
+    border-bottom: 4px solid $dark-blue;
+    border-left: 12px solid $dark-blue;
+    border-right: 10px solid $dark-blue;
+    border-radius: 20px;
+  }
+}
+
+p {
+  @include font($dark-grayish-blue,400,1.5rem,none);
+  width: 55%;
+  padding: 1.5rem 0 3rem;
+  @media(max-width: $mobile) {
+    padding: 1rem 0;
+  }
+}
+
+//page-decoration
+
+.decoration{
+  position: absolute;
+  background-color: $light-grayish-blue;
+  height: 380px;
+  border-bottom-left-radius: 50px;
+  width: 50%;
+  z-index: 0;
+  top:0;
+  right: 0;
+  @media (max-width: $mobile){
+    height: 500px;
+  }
+}
+//navbar
+
+.navbar {
+  padding: 3.5rem 10%;
+  margin: 0 auto;
+  @media(max-width: $mobile) {
+    padding: 3rem;
+    margin: 0;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler > .close {
+  display: inline;
+}
+
+.navbar-toggler.collapsed > .close,
+.navbar-toggler:not(.collapsed) > .toggler-icon {
+  display: none;
+}
+
+.navbar-collapse {
+  .navbar-nav {
+    .nav-link {
+      margin: 0 0.5rem;
+      @include font($dark-blue,700,1rem,uppercase);
+      letter-spacing: 0.1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .login {
+      color: $grayish-blue;
+
+      &:before {
+        content: "";
+        background-color: $grayish-blue;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0.2rem 2rem 0.2rem 0;
+      }
+    }
+  }
+  @media(max-width: $mobile) {
+    background: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: -5px 2px 29px -2px rgba(0,0,0,0.2);
+    -moz-box-shadow: -5px 2px 29px -2px rgba(0,0,0,0.2);
+    box-shadow: -5px 2px 29px -2px rgba(0,0,0,0.2);
+    margin-top: 2rem;
+    padding: 0.4rem 2rem;
+    text-align: center;
+    line-height: 2rem;
+
+    .login::before {
+      content: "";
+      display: inline-block;
+      border-top: 0.1rem solid $light-grayish-blue;
+      width: 100%;
+    }
+  }
+}
+//header
+
+.header {
+  padding-left: 10%;
+  margin: 0 auto 3rem;
+}
+
+.content-item:first-of-type {
+  margin-top: 2.5rem;
+
+  .btn-danger {
+    @include font(#fff, 700,0.9rem, uppercase);
+    background-color: $primary-color;
+    letter-spacing: 0.05rem;
+    margin-right: 1rem;
+
+    &:hover {
+      background-color: lighten($primary-color, 20%);
+    }
+  }
+}
+
+.content-item:last-of-type {
+  padding: 0;
+  height: 470px;
+  width: 100%;
+  background-image: url("../../images/illustration-devices.svg");
+  @media(max-width: $mobile) {
+    padding-left: -1rem;
+    height: 300px;
+    background-size: cover;
+    margin-bottom: 3rem;
+  }
+}
