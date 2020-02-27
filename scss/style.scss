@@ -98,17 +98,17 @@ p {
 
       &:before {
         content: "";
+        background-color: $grayish-blue;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
         display: inline-block;
-        border-top: 0.1rem solid $light-grayish-blue;
-        width: 100%;
-        @media(min-width: $mobile){
-          content: "";
-          background-color: $grayish-blue;
-          height: 5px;
-          width: 5px;
-          border-radius: 50%;
-          display: inline-block;
-          margin: 0.2rem 2rem 0.2rem 0;
+        margin: 0.2rem 2rem 0.2rem 0;
+
+        @media(max-width: $mobile){
+          border-top: 0.1rem solid $light-grayish-blue;
+          height: 0;
+          width: 100%;
         }
 
       }
