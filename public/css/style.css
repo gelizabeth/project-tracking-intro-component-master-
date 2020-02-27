@@ -54,6 +54,7 @@ p {
       height: 500px; } }
 
 .navbar {
+  position: absolute;
   padding: 3.5rem 10%;
   margin: 0 auto; }
   @media (max-width: 576px) {
