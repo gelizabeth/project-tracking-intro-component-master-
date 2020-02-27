@@ -95,14 +95,22 @@ p {
     .login {
       color: $grayish-blue;
 
+
       &:before {
         content: "";
-        background-color: $grayish-blue;
-        height: 5px;
-        width: 5px;
-        border-radius: 50%;
         display: inline-block;
-        margin: 0.2rem 2rem 0.2rem 0;
+        border-top: 0.1rem solid $light-grayish-blue;
+        width: 100%;
+        @media(min-width: $mobile){
+          content: "";
+          background-color: $grayish-blue;
+          height: 5px;
+          width: 5px;
+          border-radius: 50%;
+          display: inline-block;
+          margin: 0.2rem 2rem 0.2rem 0;
+        }
+
       }
     }
   }
@@ -116,13 +124,6 @@ p {
     padding: 0.4rem 2rem;
     text-align: center;
     line-height: 2rem;
-
-    .login::before {
-      content: "";
-      display: inline-block;
-      border-top: 0.1rem solid $light-grayish-blue;
-      width: 100%;
-    }
   }
 }
 //header
